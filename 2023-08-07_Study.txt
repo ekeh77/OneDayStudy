@@ -1,0 +1,15 @@
+2023-08-07 패스트 캠퍼스 
+                한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4=1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        01. 강사 소개 학습목표
+            Udemy
+                JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    25.문자열 더 보기
+                        Study - 작은따옴표를 사용하기 위해선 큰따옴표를 사용한다
+                                예) "'Test'"
+                                따옴표 대신 백틱(`)기호로 감싸 사용가능하다
+                                백틱 사용시 변수의 경우는 ${}로 감싼다
+                                개행을 사용하려면 따옴표의 경우는 \n를 사용한다
+                                백틱 사용시 그냥 백틱사이에 그냥 개행을 넣으면 된다
+                                \를 사용하기 위해선 \\로 사용한다
+                        String 참고 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Escape_notation
