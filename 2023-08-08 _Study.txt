@@ -1,0 +1,17 @@
+2023-08-08 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4=1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        02. JPA 소개
+                            객체(Applycation)와 데이터 베이스를 연결해주는 개념 ORM
+                            JPA는 ORM의 표준스펙 인터페스로 제공
+                            Hibernate -> JPA의 실제구현 클래스들을 모아놓은것
+                            Spring Data Jpa -> Hibernate를 간단하게 사용하기 위한 것
+            Udemy
+                JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    26.함수 소개
+                        추후의 실행할 코드를 미리 정의하는것
+                        function greetUser(/함수명/)(name(/매개변수/)){
+                            (/코드/)
+                            alert('Hi' + name);
+                        }
+                        함수를 선언하면 함수를 등록하고 호출시 실행
