@@ -1,0 +1,17 @@
+2023-08-16 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4=1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        04. Lombok 알아보기
+                            @ToString                //ToString 메서드 오버라이드
+                            @Getter                  //Getter 생성
+                            @Setter                  //Setter 생성
+                            @NoArgsConstructor       //인자가 없는 생성자 생성
+                            @AllArgsConstructor      //인자가 있는 생성자 생성
+                            @RequiredArgsConstructor //꼭 필요한 인자만 생성하는 생성자 생성
+                            @EqualsAndHashCode       //객체의 동등성을 확인
+                            @Data                    //@ToString, @Getter, @Setter, @RequiredArgsConstructor, @EqualsAndHashCode를 합친 것
+                            @Builder                 //AllArgsConstructor와 비슷하나 builder 형식으로 생성
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    27.사용자 정의 함수 추가하기
+                        함수는 시작시 먼저 등록되기 때문에 어느위치에 정의해도 호출에 문제는없다(다른 js파일에서 호출할경우 제외)
