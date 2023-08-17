@@ -1,0 +1,17 @@
+2023-08-16 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4=1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        05. H2 DB 및 로그 설정
+                            H2라는 데이터베이스 사용하는방법 
+                            build : runtimeOnly 'com.h2database:h2'
+                            application.yml : spring:
+                                                h2:
+                                                    console:
+                                                    enabled: true
+
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    30.코드 순서의 (비)중요성
+                        자바스크립트 즉 브라우저는 실행시 코드를 전부 훑고 실행을 시작한다
+                        변수선언의 경우는 순서가 중요하며 함수는 순서가 중요하지 않으나
+                        읽기 좋은 코드를 위해 순서를 잘 생각하며 작성 할 필요가 있다
