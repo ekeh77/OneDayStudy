@@ -1,0 +1,33 @@
+2023-08-21 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        01. Repository Interface 계층 살펴보기
+                            build.gradle : implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+                            자바 객체 선언 : @Entity
+                            @Entity 선언시 PK가 필요 : @Id
+                            순차적 데이터 증가 : @GeneratedValue
+                            interface에 JpaRepository<객체, PK> 상속 
+                             userRepository.save(new UserS()); - 데이터 저장
+                             userRepository.findAll(); - 모든 데이터 조회
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    31.전역 & 로컬 범위 소개
+                        전역변수에 선언한것은 함수내에서도 사용가능하나
+                        로컬 또는 블록에서 선언한것은 외부에서 사용할 수 없다
+                    32.그림자(Shadow) 변수
+                        let userName = 'Max';
+                        function greetUser(name) {
+                        let userName = name;
+                        alert(userName);
+                        }
+                        userName = 'Manu';
+                        greetUser('Max');
+                        
+                        위 코드 실행시 Max라는 경고 표시
+
+                        let userName = 'Max';
+                        let userName = 'Manu';
+
+                        작동하지 않음
+
+                        지역변수를 먼저 찾고 전역변수를 찾음
