@@ -1,0 +1,14 @@
+2023-08-22 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        01. Repository Interface 메소드 실습 (1)
+                            call next value for hibernate_sequence;는 스프링부트 2.4 이상은 사용할 수 없음
+                            resource폴더아래 sql작성시 insert into User_Data (`id`, `name`, `email`, `created_at`, `updated_at`) values (2, 'dennis', 'dennis@fastcampus', now(), now());
+                            getOne을 사용하기 위해선 @Transactional 필요
+                            findById의 경우는 Optional로 감싸여있음
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    33."반환" 문장 더 보기
+                        return을 사용하면 이후 코드는 작동하지않는다
+                        return은 한번만 사용가능하다
+                  
