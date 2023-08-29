@@ -1,0 +1,26 @@
+2023-08-23 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        02. Repository Interface 메소드 실습 (2)
+                            flush(); - DB반영시점과 관련된 쿼리
+                            saveAndFlush;
+                            logn count = userRepository.count(); - 쿼리 개수 조회
+                            boolean exists = userRepository.existsById(1L); - 존재 여부 확인
+                            userRepository.delete(userRepository.findById(1L).orElseThrow(RuntimeException::new)); - 객체를 넣어 삭제
+                            userRepository.deleteById(1L); - 아이디 선택삭제
+                            userRepository.deleteAll(); - 전체삭제
+                            userRepository.deleteAll(userRepository.findById(Lists.newArrayList(1L, 3L))); - 여러개삭제
+                            userRepository.deleteInBatch(userRepository.findById(Lists.newArrayList(1L, 3L))); - 삭제를 한번만 돌기 때문에 성능이 더 빠름
+                            userRepository.deleteInBatch() - 조회하지않고 삭제하기 때문에 성능이 더 빠름
+                            Page<User> users = userRepository.findAll(PageRequest.of(1,3));
+                                users : getTotalElements(), getTotalPages(), getNumberOfElements(), getSort(), getSize(), getContent()
+                            ExampleMatcher matcher = ExampleMatcher.matching()
+                                .withIgnorePaths("name")
+                                .withMatcher("email", endsWith()); - 이메일이 같은 데이터 검색
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    34.함수를 "간접적으로" 실행하기
+                    35."간접적" vs "직접적" 함수 실행 - 요약
+                        add() - 직접
+                        add - 간접 하지만 이벤트리스너의 경우에 사용
+                  
