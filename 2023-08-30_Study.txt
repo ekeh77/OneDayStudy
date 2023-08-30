@@ -1,0 +1,21 @@
+2023-08-29 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        01. 쿼리메소드의 정의 및 기본실습 1
+                            List<User_Data> findByName(String name); - 명칭을 통해 데이터를 가져오는 쿼리
+                            User_Data findByEmail(String email);
+                            User_Data getByEmail(String email);
+                            User_Data readByEmail(String email);
+                            User_Data queryByEmail(String email);
+                            User_Data searchByEmail(String email);
+                            User_Data streamByEmail(String email);
+                            User_Data findUserByEmail(String email);
+                            User_Data findFirst1ByName(String name);    
+                            User_Data findTop1ByName(String name);
+                            -------
+                            User_Data findLast1ByName(String name); - Last가 없는 키워드이기 떄문에 Last가 무시됨 
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    38.함수로 코드 나누기
+                        사용하는곳이 많아지면 변수로 묶거나 함수로 묶는방법이 있다
+                  
