@@ -1,0 +1,18 @@
+2023-08-31 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        02. 쿼리메소드의 정의 및 기본실습 2(1)
+                            List<User_Data> findByEmailAndName(String email, String name)
+                            List<User_Data> findByEmailOrName(String email, String name)
+                            List<User_Data> findByCreatedAtAfter(LocalDateTime yesterday)
+                            List<User_Data> findByIdAfter(Long Id)
+                            List<User_Data> findByCreatedAtGreaterThan(LocalDateTime yesterday)
+                            List<User_Data> findByCreatedAtGreaterThanEqual(LocalDateTime yesterday)
+                            List<User_Data> findByCreatedAtBetween(LocalDateTime yesterday, LocalDateTime tomorrow)
+                            List<User_Data> findByIdBetween(Long Id, Long Id2)
+                            List<User_Data> findByCreatedAtGreaterThanEqualAndLessThenEqual(LocalDateTime yesterday)
+            Udemy       
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    39.모든 버튼들을 함수에 연결하기
+                        사칙연산  함수 구현 진행
+                  
