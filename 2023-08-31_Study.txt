@@ -1,7 +1,7 @@
 2023-08-31 패스트 캠퍼스 
             한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
                     Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
-                        02. 쿼리메소드의 정의 및 기본실습 2(1)
+                        02. 쿼리메소드 기본실습 2(1)
                             List<User_Data> findByEmailAndName(String email, String name)
                             List<User_Data> findByEmailOrName(String email, String name)
                             List<User_Data> findByCreatedAtAfter(LocalDateTime yesterday)
