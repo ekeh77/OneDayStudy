@@ -1,0 +1,21 @@
+2023-09-06 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        04. 쿼리메소드로 정렬시켜 보기
+                            List<User>findTop1ByName(String name) - 가장 첫번째 이름
+                            List<User>findTop1ByNameOrderByIdDesc(String name) - 가장 마지막 이름(역순으로 정렬해 첫번째것을 가져온)
+                            List<User>findFirstByNameOrderByIdDescEmailAse(String name) - ID는 역순 Email은 정순으로 정렬한 명칭을 첫번쨰 
+                            List<User>findFirstByName(String name, Sort sort) - sort인자를 넣어 정렬가능 Sort.by(Order.desc("id))
+                            따로 정렬 메소드를 구현하여 사용해도 좋다.
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    41.연산자 더 보기!
+                    currentResult += enteredNumber; = currentResult = currentResult + enteredNumber;
+                    currentResult -= enteredNumber; = currentResult = currentResult - enteredNumber;
+                    currentResult *= enteredNumber; = currentResult = currentResult * enteredNumber;
+                    currentResult /= enteredNumber; = currentResult = currentResult / enteredNumber;
+                    currentResult++; = currentResult + 1; 호출시 수정전 값이 나옴
+                    currentResult--; = currentResult - 1;
+                    ++currentResult; 호출시 수정된 값이 나옴
+                    --currentResult; 
+                  
