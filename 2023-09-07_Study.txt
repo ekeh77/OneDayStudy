@@ -1,0 +1,14 @@
+2023-09-08 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        05. 쿼리메소드로 페이징 처리하기
+                            Page<User> findByName(String name, Pageable pageable);
+                            userRepository.findByName("martin", PageRequest.of(0, 1, Sort.by(Order.desc("id")))).getContent(); - id의 역순의 0번째의 페이지 데이터을 들고오도록
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    42.코어 자료형 더 보기!
+                    Number - 숫자형
+                    String(Text) - 문자형
+                    Booleans = true / false 참 / 거짓
+                    Objects - {name : 'Max', age : 31} 키와 값으로 이루어져있음
+                    Arrays - [1, 3, 5] - 데이터의 리스트
