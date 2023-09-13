@@ -1,0 +1,19 @@
+2023-09-12 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        01. Entity의 Listener의 활용 - 1
+                          @PrePersist - insert 하기전에 실행되는 Listener
+                          @PreUpdate - update 하기전에 실행되는 Listener
+                          @PreRemove - delete 하기전에 실행되는 Listener
+                          @PostPresist - insert 한후에 실행되는 Listener
+                          @PostUpdate - update 한후에 실행되는 Listener
+                          @PostRemove - delete 한후에 실행되는 Listener
+                          @PostLoad - select 한후에 실행되는 Listener
+                          -insert, update 시 자동으로 오늘날짜로 변경가능하다
+                            this.dateTime = LocalDateTime.now();
+                          @EntityListener(value = "사용할 EntityListener".class) - 공통적으로 사용되는 Listener를 하나의 클래스로 사용하기 위해 사용                             
+
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    46.객체 데이터에 액세스하기
+                    객체의 값을 가져오기 위해서는 객체.키 형태로 부르면 된다.

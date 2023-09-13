@@ -1,0 +1,17 @@
+2023-09-13 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        02. Entity의 Listener의 활용 - 2
+                          UserHistory 엔티티를 만들어서 History관리
+                          리스너는 , 로 여러개 지정할 수 있다.
+                          Bean이 없어 에러가 뜨는데 ApplicationContextAware를 상속받아 getBean 메소드 생성
+                          @CreatedDate - 생성시각을 넣어주는 어노테이션
+                          @LastModifieDate - 업데이트시각을 넣어주는 어노테이션
+                          @MappedSuperclass - 상위클래스에 상속하겠다는 어노테이션
+                          @ToString(callSuper = true) - 상속 다 받고 String 비교하겠다
+                          @EqualsAndHashCode(callSuper = true) - 상속 다 받고 해쉬코드 비교하겠다
+
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    47.객체를 사용하는 재사용 가능한 함수 추가하기
+                    log함수를 만들어 각 사칙연산에 적용
