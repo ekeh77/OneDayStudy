@@ -1,0 +1,14 @@
+2023-09-14 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        Ch 06.연관관계 살펴보기
+                          01.연관관계(relation) 개요 및 ERD 알아보기
+                            만들었던 프로그램의 ERD(Entity Relationship Diagram)를 그려봄
+
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    48.undefined, null & NaN
+                    undefined - 초기화 되지않은 변수의 기본값 아무것도 없음(데이터 유형)
+                      해당값을 할당할 수 는 없음(실행은 되나 권장되지않음)
+                    null - 데이터가 없음 null은 기본값이 될 수 없음 할당으로 사용
+                    NaN - 숫자가 아님 에러코드이며 숫자로 올바르게 계산하지 않았다면 발생
