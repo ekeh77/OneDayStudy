@@ -1,0 +1,15 @@
+2023-09-18 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        Ch 06.연관관계 살펴보기
+                          02.1대1 연관관계 살펴보기(1)
+                            BookReviewInfo 클래스를 통해 책과 책 리뷰를 1대1연관하는 클래스 생성
+                            float, int의 경우는 not null로 생성되며 기본값 0으로 들어감
+                            ctrl + shift + T - 테스트 생성 
+
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    49.Typeof 연산자
+                    typeof - 확인하고자하는 변수를 넣으면 해당 변수의 타입을 확인할 수 있다
+                        array와 object null은 object로 나온다
+                        NaN의 경우 number로 나온다
