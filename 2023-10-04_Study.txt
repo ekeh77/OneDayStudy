@@ -1,0 +1,29 @@
+2023-10-04 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        Ch 06.연관관계 살펴보기
+                          03.1대N 연관관계 살펴보기
+                            List<UserHistory> result = userHistoryRepository.findByUserId(userRepository.findByEmail("email".getId()));
+                            result.forEach(System.out::println);
+
+                            @OneToMany - 1대N 설정
+                            @OneToMany(fetch = FetchType.EAGER) - 1대N 설정(트랜잭션 오류발생시)
+                            @JoinColumn() - 어떤컬럼으로 조인할지 설정(디폴트값 변수값으로 설정)
+                                (name = "user_id") - 이름설정
+                                (insertable = false) - 삽입여부 설정 
+                                (updatable = false) - 변경여부 설정
+                            private List<UserHistory> userHistories = new ArrayList<>();
+
+                            Repository를 생략가능
+                            List<UserHistory> result = userRepository.findByEmail("email").getUserHistories();
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    52.마무리
+                        이전 강의 정리
+                    53.유용한 참고 자료 & 링크
+                      MDN => JavaScript 기초: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+                      MDN => 변수: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables
+                      MDN => 연산자: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math
+                      MDN => 함수: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions
+                      MDN => 배열: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
+                      MDN => 객체: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
