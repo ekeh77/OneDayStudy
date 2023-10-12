@@ -1,0 +1,11 @@
+2023-10-12 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        Ch 06.연관관계 살펴보기
+                          05.N대N 연관관계 살펴보기(2)
+                            새로운 중간 테이블로 만들어 ManyToOne로 풀어서 사용
+                            사용하는곳은 OneToMany로 사용
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    56.IDE Look & Feel 구성하기
+                        color theme 설정법
