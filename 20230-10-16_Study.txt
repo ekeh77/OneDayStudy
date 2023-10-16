@@ -1,0 +1,43 @@
+2023-10-16 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        Ch 07.영속성이란?
+                          01.영속성 컨텍스트
+                            영속화 - 사라지지않고 지속적으로 접근 가능하다는 의미
+
+                            컨텍스트 - 관리하는 차원에서 담아두는 컨테이너같은것 
+
+                            EntityManager 인터페이스
+
+                            META-INF 폴더안에 PersistenceXml를 만들어 사용
+
+                            My SQL - 연결
+
+                            gradle
+
+                            runtimeOnly 'mysql:mysql-connector-java’
+
+                            applycation.yml 
+
+                            generate-ddl: false
+
+                            hibernate:
+
+                            ddl-auto: create-drop
+
+                            datasource:
+
+                            url: jdbc:mysql://localhost:3306/book_manager
+
+                            username: root
+
+                            password:
+
+                            initialization-mode: always
+
+                            generate-ddl - 구현체와 상관없이 생성함 ddl-auto 옵션보다 후순위
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    57.단축키 사용하기
+                        select 단축키는 코드를 수정하는것에 있어 편하다
+                        Keyboard Shortcuts에서는 키를 바인딩가능하다
