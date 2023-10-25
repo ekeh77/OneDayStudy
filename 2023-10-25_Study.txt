@@ -1,0 +1,43 @@
+2023-10-25 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        Ch 07.영속성이란?
+                          04~05.트랜잭션 매니저(1~2) 
+                            JPA에서 Transaction 활용하기
+
+                            Transaction- All or Nothing 
+
+                            Transaction의 특성 ACID
+
+                            Atomicity - 부분적인 성공을 인정하지 않음
+
+                            Consistency - 일관성 있는 데이터베이스 상태로 유지
+
+                            Isolation - Transaction 실행내역은 연속적이어야함을 의미한다 다른 Transaction으로 부터 독립적
+
+                            Durability - 성공적으로 수행된 Transaction은 영원히 반영되어야한다
+
+                            MY SQL 명령어
+
+                            show databases - 현재 존재하는 데이터베이스를 보여주는 명령어
+
+                            create ‘데이터베이스’ - 데이터베이스를 생성하는 명령어
+
+                            use ‘데이터베이스’ - 데이터베이스를 사용하는 명령어
+
+                            show tables - 현재 존재하는 테이블을 보여주는 명령어
+
+                            select * from ‘테이블’ - 테이블의 있는 데이터를 보여주는 명령어
+
+                            @Transaction을 사용하는 경우 - 메서드 실행시점이 아닌 가장 마지막(Transaction이 끝나는 시점)에 데이터가 들어감(Commit)
+
+                            save를 사용하는 경우 기본적으로 Transaction을 한다
+
+                            2 - exception을 통해 오류를 발생시켜 Transaction의 특성중 Atomicity 확인
+
+checked excetion을 사용할경우 롤백이 되지않는다
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    60.에디터 설정 수정하기
+                        tab width(Tab Size) - 탭을 눌렀을 떄의 공백 조절
+                        .vscode의 settings.jso에서 설정가능
