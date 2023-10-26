@@ -1,0 +1,18 @@
+2023-10-26 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        Ch 07.영속성이란?
+                          06.트랜잭션 매니저(3) 
+                            runtime exception(unchecked exception) - 롤백됨
+
+                            checked exception - 롤백안됨(롤백하기 원하면 @Transaction의 rollbackfor 사용)
+
+                            private, public이라도 Bean 내부에서 호출하면 @Transaction가 소용없음
+
+                            checked excetion을 사용할경우 롤백이 되지않는다
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    61.다양한 IDE 뷰 활용하기
+                        IDE의 VIEW에서 Search를 통해 원하는 단어를 찾을 수 있음
+                                       SCM을 통해 소스 제어가 가능
+                                       Debug를 통해 디버그 작업이 가능
