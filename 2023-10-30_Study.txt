@@ -1,0 +1,35 @@
+2023-10-30 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        Ch 07.영속성이란?
+                          07.트랜잭션 매니저(4)
+                            @Transaction의 내부
+
+                            isolation - 동시의 발생하는 트랜잭션의 처리를 담당
+
+                            defalut - DB의 격리를 따라감
+
+                            read uncommitted - 커밋되지않은 읽기 (데이터의 정합성을 해칠 가능성 존재)
+
+                            read committed - 커밋된 읽기(커밋된 데이터만 읽기 때문에 정합성을 해칠 가능성 X)
+
+                            repeatable read - 반복 가능한 읽기
+
+                            serializable - 직렬화기능
+
+                            @DynamicUpdate - 변경된 컬럼만 업데이트 진행한다(JPA는 전체 컬럼을 잡아 업데이트 진행되지 때문에 사용)
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    62.도움말 찾기 & MDN으로 작업하기
+                        MDN 홈페이지를 참조하기 - MDN 사용메서드 검색시 해당 정보가 나올확률이 높다
+                        구글 하는법을 배우기
+                        적절한 질문을 하여 다른사람에게 도움받기
+                        포기하지않고 직접 여러코드를 사용하여 시도하기
+                    63.ECMAScript 표준
+                      ECMAScript(JavaScript "토대" 언어)는 현재 개발 중이며 현재 진행 상황과 표준에 대해서는 문서화되어 있습니다.
+
+                      이 페이지에서 링크를 찾을 수 있습니다.  https://www.ecma-international.org/publications/standards/Ecma-262.htm
+
+                      참고. 이 문서는 결코 개발자가 알아 두거나 사용해야 할 내용이 전혀 아닙니다. 그보다는 브라우저 공급업체에게 중요한 문서죠.
+
+                      그래도 후방에서 어떤 작업이 이루어지고 있는지에 대해 흥미가 있으시다면, 이 문서가 도움이 될 겁니다.
