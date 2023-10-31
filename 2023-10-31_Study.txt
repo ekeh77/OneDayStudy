@@ -1,0 +1,24 @@
+2023-10-31 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        Ch 07.영속성이란?
+                          07.트랜잭션 매니저(5)
+                            @Transaction의 내부
+
+                            isolation - 동시의 발생하는 트랜잭션의 처리를 담당
+
+                            defalut - DB의 격리를 따라감
+
+                            read uncommitted - 커밋되지않은 읽기 (데이터의 정합성을 해칠 가능성 존재) 
+
+                            read committed - 커밋된 읽기 (unrepeatable read 현상이 발생할 수 있음)
+
+                            repeatable read - 반복 가능한 읽기 트랜잭션 내에서 반복되서 조회해도 동일한 결과가 나오도록 (Phantom Read현상이 발생할 수 있음)
+
+                            serializable - 직렬화기능 커밋이 일어나지 않으면 락을 걸어서 커밋이 진행되어야지 로직이 진행되도록 한다. (성능상에 문제가 있음)
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    64."Google" 검색 올바르게 하는 법
+                        사용하는 개발 툴 + 원하는 기능으로 검색
+                        stackoverflow 찾기
+                        키워드로 검색
