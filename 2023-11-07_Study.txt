@@ -1,0 +1,27 @@
+2023-10-31 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        ch.09 커스텀 쿼리 사용하기
+
+                            01.@Query 사용하기(01)
+
+                            쿼리만으로도 조회쿼리를 진행할 수 있으나 아래의 부분 때문에 사용
+
+                            - 쿼리메소드의 이름길이가 너무 길어질 경우
+
+                            필수 입력값을 넣는 방법
+
+                            - BaseEntity에 @Column(nullable = false)를 통해 필 수 입력 값으로 체크
+                            - data.sql 에 쿼리 수정 (’created_at’, ‘updated_at’) 입력
+                            - @Column 속성에 colmnDefinition 이용 (현업은 AutoDDL을 잘 안쓰므로 잘 사용하지 않음)
+
+                            @Column(columnDefinition = "datetime(6) default now(6) null", nullable = false, updatable = false)
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    68.크롬 개발자 도구 & 중단점을 사용해 디버깅 한 단계 끌어 올리기
+                        웹브라우저의 디버그의 중단점을 설정하면 해당 시기에 코드가 멈춘다
+                        또한 설정된 중단점에 변수 및 메소드의 값을 확인가능
+                        Call Stack -> 코드의 실행 순서 확인가능, 함수의 값들 확인 및 변경 가능
+                        Watch -> 변수가 변경될 때 항목들을 실시간으로 보여줌
+                        조건부 중단점 -> 조건에 따라 멈추는 중단점
+                        이벤트 리스너 중단점 -> 이벤트에 따라 멈추는 중단점

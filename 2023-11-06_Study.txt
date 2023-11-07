@@ -1,0 +1,40 @@
+2023-10-31 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        ch.08 영속성 전이에 대해서
+                            02.고아제거속성 알아보기
+                                book(Many)만 제거하더라도 연관관계에 있는 Publisher(One)까지 같이 제거되는 부분
+
+                                CascadeType.REMOVE
+
+                                CascadeType.REMOVE, orphanRemoval의 차이
+
+                                - CascadeType.REMOVE: @ManyToOne(cascade = {CascadeType.REMOVE}) 설정
+                                - orphanRemoval: @OneToMany(orphanRemoval = true) 설정
+
+                                Cascade는 말그대로 상위 객체가 리무브 액션을 취하고있는 포함하고 잇는 객체에 해당 영속성 이벤트를 전파해서 하위 엔티티까지 리무브 시켜주는것
+
+                                - > 연관관계가 끊어질때(set null) 리무브 이벤트가 발생하지는 않음
+
+                                연관관계가 없는 데이터를 살려둘려면 `orphanRemoval = false` 사용
+
+                                - > 고아 객체 제거하려면 true
+
+                                참조하는 곳이 하나일 때 사용해야한다.
+
+                                Soft Delete
+
+                                Deleted flag 컬럼을 설정하고 true는 삭제로 판단
+
+                                Entity에 조건문을 생성하여 넣을 수도 있음
+
+                                @Where(clause = “deleted = false”)
+
+                                public class Book extends BaseEntity{
+                                }
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    67.console.log() 사용해 "코드 안을"들여다 보기
+                        논리적인 오류가 발생할 경우 console.log 디버깅을 사용
+                        console.log() - 콤마로 표시할 내용을 여러개 표시 가능
+                        웹브라우저 디버깅을 확인 -> String일 경우 검은색 Number는 파란색으로 표시됨
