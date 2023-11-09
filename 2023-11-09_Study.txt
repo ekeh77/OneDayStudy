@@ -1,0 +1,26 @@
+2023-11-08 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        ch.09 커스텀 쿼리 사용하기
+                            01.@Query 사용하기(03)
+
+                            필요한 값만 가져오기 위해 인터페이스 형식으로도 사용가능하다
+
+                            구체 클래스를 만들어서 사용가능
+
+                            @Query(value = “select new com.fastcampus.jpa.bookmanager.repository.dto.BookNameAndCategory(b.name, b.category) from Book b”)
+
+                            페이징 기능
+
+                            Page<BookNameAndCategory> findBookNameAndCategory(Pageable pageable)                                 
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    70.VS코드 내에서 직접 코드 디버깅하기
+                        VS Debugger for Chrome -> 구글 크롬의 디버거 기능을 VS에서 사용가능
+                    71.마무리
+                        정리영상
+                    72.유용한 참고 자료 & 링크
+                        VS Code 문서: https://code.visualstudio.com/docs
+                        VS Code 키 바인딩: https://code.visualstudio.com/docs/getstarted/keybindings
+                        VS Code 확장 프로그램 관련 문서: https://code.visualstudio.com/docs/editor/extension-gallery
+                        Google Chrome 개발자 툴 관련 문서: https://developers.google.com/web/tools/chrome-devtools/
