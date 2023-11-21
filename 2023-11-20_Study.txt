@@ -1,4 +1,4 @@
-2023-11-15 패스트 캠퍼스 
+2023-11-20 패스트 캠퍼스 
             한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
                     Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
                     ch.11 JPA 트러블 슈팅
@@ -47,7 +47,7 @@
                         해당부분도 중복데이터가 발생할 경우가 존재하여 DISTINCT 사용 필요
             Udemy
                JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
-                    76."if", "else", "else-if"로 작업하기
+                    77."if", "else", "else-if"로 작업하기
                         다른 조건을 생성하려면 else if를 사용
                         if 조건을 확인후 충족하지 않는다면 else if로 이동하여 조건확인
                         else의 경우는 모든 if, else if 조건이 충족되지않는경우 진행되는 구문

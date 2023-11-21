@@ -1,0 +1,29 @@
+2023-11-21 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        ch.11 JPA 트러블 슈팅
+
+                        02.영속성 컨텍스트로 인해 발생하는 이슈
+
+                        Save전에 영속성 컨텍스트에 캐시를 저장하고 insert를 한다
+
+                        - 속성 컨텍스트 캐쉬에는 `Address`가 `null인 user1`과 `빈 객체를 가진 user2` 모두 존재
+                        - `entityManager.clear()`를 통해서 캐쉬를 지우고 새로 엔티티를 로딩해서 데이터 확인
+
+                        - clear시 테스트 불가가됨
+
+                        영속성 컨텍스트 캐쉬는 ms까지 표시 데이터베이스는 초까지 표시
+
+                        - `EntityManager.clear()`를 하면 데이터베이스에 값을 조회함으로 초까지만 표시
+
+                        JPA에선 기본적으로 모든 컬럼을 `insert` / `update` 처리
+
+                        - 등록 / 수정할 컬럼만 저장하기 위해 `@DynamicInsert` / `@DynamicUpdate` 사용
+                        - 엔티티 속성에 `@Column.columnDefinition`로 `default`설정 (값이 없으면 `default` 저장)
+                        - 객체와 데이터베이스 사이에 차이가 발생(객체는 null, 데이터베이스는 default값)
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    78.등식에서 객체 & 배열을 비교할 때 주의할 점!
+                        {name : 'Max'} === {name : 'Max'} 이 두개의 객체는 같지 않다 / 배열도 동일
+                        하지만 객체를 복사하여 변수에 담으면 같음
+                        해당부분에 관한 비교를 하기 위해서는 값을 꺼내서 비교해야한다
