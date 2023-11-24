@@ -1,0 +1,15 @@
+2023-11-22 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    Part 4-1 안정적인 서비스를 위한 스프링 DATA와 Security - JPA 프로그래밍
+                        ch.11 JPA 트러블 슈팅
+                            03.배치쿼리 성능 이슈
+                                Dirty Checking -> 영속성 관리쪽의 일어난 변경은 별도의 save가 없더라도 DB에 영속화를 시켜줌 
+                                자바에서 새롭게 만든 데이터의 경우는 영속성 관리 대상이 아니기 떄문에 Dirty Checking을 하지 않는다
+                                @Transactional(readOnly = true)를 사용할 경우 Dirty Checking을 하지 않음 > Dirty Checking을 하지않기 떄문에 성능과 관련해서 나아질 수 있음
+                        
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    79.논리적인 AND과 OR 연산자
+                        한번에 여러조건을 비교하고 싶다면 AND 와 OR을 사용해야한다
+                        AND(&&)의 경우는 A B 둘 다 참이여야지만 참으로 나온다
+                        OR(||)의 경우은 A B 둘 중 하나만 참이면 참으로 나온다
