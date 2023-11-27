@@ -1,0 +1,187 @@
+2023-11-22 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    4-2.안정적인 서비스를 위한 스프링 DATA와 Security - 스프링 시큐리티
+
+                        Ch 01.강의 소개
+
+                        02.gradle 프로젝트 구성
+
+                        **settings.gradle**
+
+                        · settings.gradle에서는 전체 프로젝트의 구조를 빌드한다.
+
+                        · 다음 설정으로 한개의 프로젝트를 구성할 수 있다.
+                            rootProject.name="project-name"
+                            include "project-name"
+
+                        · 다음 설정으로 여러 모듈 프로젝트를 포함하도록 구성할 수 있다.
+                            rootProject.name="project-name"
+                            include ":sub-project1"
+                            include ":sub-project2"
+
+                        · 모듈 프로젝트들이 많아서 이들을 group으로 관리하고 싶다면, 다음과 같이 자동 빌드하는 스크립트를 쓰면 편리하다.
+
+                        · 프로젝트의 settings.gradle 파일을 클릭하고, 앞서 모듈 프로젝트를 group으로 관리하기 위한 설정에서 rootProject.name만 본인의 프로젝트 이름으로 바꿔서 다음과 같이 입력한다.
+                            [rootProject.name](http://rootproject.name/) = 'security-gradle3'
+                            ["comp", "web", "server"].each {
+                                def compDir = new File(rootDir, it)
+                                if(!compDir.exists()){
+                                    compDir.mkdirs()
+                                }
+                                
+                                compDir.eachDir {subDir ->
+                                
+                                    def gradleFile = new File(subDir.absolutePath, "build.gradle")
+                                    if(!gradleFile.exists()){
+                                        gradleFile.text =
+                                        """
+                                
+                                        dependencies {
+                                
+                                        }
+                                
+                                        """.stripIndent(20)
+                                    }
+                                
+                                    [
+                                        "src/main/java/com/sp/fc",
+                                        "src/main/resources",
+                                        "src/test/java/com/sp/fc",
+                                        "src/test/resources"
+                                    ].each {srcDir->
+                                        def srcFolder = new File(subDir.absolutePath, srcDir)
+                                        if(!srcFolder.exists()){
+                                            srcFolder.mkdirs()
+                                        }
+                                    }
+                                
+                                    def projectName = ":${it}-${subDir.name}";
+                                    include projectName
+                                    project(projectName).projectDir = subDir
+                                }
+                            }
+
+                        · 루트 프로젝트의 build.gradle의 설정을 구성한다.
+                            // 별도의 외부 라이브러리를 가져와야 할 때 사용
+                            buildscript {
+                                // build.gradle에서 사용하는 전역 변수 설정
+                                ext {
+                                    spring = "2.4.1"
+                                    boot = "org.springframework.boot"
+                                    lombok = "org.projectlombok:lombok"
+                                }
+                                repositories {
+                                    // mavenCentral 레퍼지토리 사용 https://mvnrepository.com/repos/central
+                                    mavenCentral()
+                                }
+                                
+                                // 레파지토리에서 찾을 라이브러리 입력
+                                dependencies {
+                                    // 스프링 부트를 gradle로 빌드할 때 사용하는 라이브러리
+                                    classpath("$boot:spring-boot-gradle-plugin:$spring")
+                                }
+                            }
+
+                            // (rootproject 포함) 모든 프로젝트의 공통 내용
+                            allprojects {
+                                // 모든 프로젝트에서 공통으로 사용될 그룹 id와 버전 id
+                                group = "com.sp.fc"
+                                version = "1.0.0"
+                            }
+
+                            // (rootproject 제외) 하위 프로젝트의 공통 내용
+                            subprojects {
+                                apply plugin: "java" // 자바 플러그인
+                                // 스프링 관련 플로그인
+                                apply plugin: boot
+                                apply plugin: "io.spring.dependency-management"
+                                apply plugin: "idea"
+                                
+                                repositories {
+                                    mavenCentral()
+                                }
+                                
+                                configurations {
+                                    runtimeClasspath {
+                                        extendsFrom developmentOnly
+                                    }
+                                }
+                                
+                                dependencies {
+                                    implementation "$boot:spring-boot-starter-security" // 스프링 시큐리티 관련 라이브러리
+                                    implementation 'com.fasterxml.jackson.core:jackson-annotations' // json 관련 라이브러리
+                                    
+                                    compileOnly lombok
+                                    testCompileOnly lombok
+                                    annotationProcessor lombok
+                                    testAnnotationProcessor lombok
+                                    
+                                    testImplementation "$boot:spring-boot-starter-test" // 단위 테스트를 위한 라이브러리
+                                }
+                                
+                                test {
+                                    useJUnitPlatform()
+                                }
+                            }
+
+                        · server 프로젝트를 구성하자. server 프로젝트 build.gradle 파일에 아래 설정을 입력하고, gradle refresh한다.
+                            dependencies {
+                                // 웹을 사용하기 위한 라이브러리
+                                implementation("$boot:spring-boot-starter-web")
+                            }
+
+
+                        프로젝트가 정상적으로 구성되었는지 확인하기 위해, java 패키지에 스프링부트 애플리케이션 역할을 하는 BasicTestApplication 클래스를 생성한다.
+                            @SpringBootApplication
+                            public class BasicTestApplication {
+                                public static void main(String[] args) {
+                                    SpringApplication.run(BasicTestApplication.class, args);
+                                }
+                            }
+
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    81.True/false를 넘어서 : "사실 같은", "거짓 같은" 값들
+                        Falsy and Truthy
+                            비교연산자를 넣어 불리언값으로 나오는것이 아닌 변수로 처리하는 경우 해당 조건문의 상태는 
+                            참 일수도 거짓일 수도 있는 상태
+
+                            if(const){} - const가 참이 될 경우 참
+                            if(!const){} - const가 거짓일 경우 참
+                        Falsy and Truthy
+                            0 -> false
+                            다른 숫자(정수, 음수) -> true
+                            "" -> false
+                            다른 문자 -> true
+                            {}, [], 다른 객체 및 배열 -> true
+                            null, undefined, NaN -> false
+                    82.Coercion vs Conversion
+                        JavaScript에서는 비교 연산자 없이도 조건문에서 변수를 사용할 수 있다는 점을 이해하는 것이 중요합니다.
+                        다음과 같이 불리언 변수를 고려하는 예를 보시면, 이는 분명합니다.
+                            let isLoggedIn = true;
+                            if (isLoggedIn) {
+                                ...
+                            }
+                            
+                        if는 참이나 거짓을 반환하는 조건을 원하기 때문에 불리언 변수나 불값을 제공하기만 하면 - 추가 비교 없이 작동합니다(if (isLoggedIn === true ) - 작동은 하지만 중복됨).
+
+                        위의 예는 이해하셨어도 다음과 같은 코드를 처음 접하면 혼란스러울 수 있습니다.
+
+                            let userInput = 'Max';
+                            if (userInput) {
+                                ... // this code here will execute because 'Max' is "truthy" (all strings but empty strings are)
+                            }
+
+                        JavaScript는 if(또는 조건이 필요한 다른 위치)에 전달한 값을 불값으로 강제 변환("실제로 변환하지 않고 변환")하려고 합니다. 즉 'Max' 를 불리언으로 해석하려고 하고 이전 강의에서 설명한 규칙을 따릅니다(예: 0 는 false로 처리되고 다른 모든 숫자는 true 등으로 처리됩니다.)
+
+                        JavaScript가 실제로 값을 변환하지는 않는다는 것을 이해하시는 게 중요합니다.
+
+                        userInput 은 위와 같은 조건에서 사용된 후에도 여전히 'Max' 를 유지합니다 - 즉 불리언으로 변환되지 않습니다. 만일 실제로 변환한다면 변수에 저장된 값을 잃게 되기 때문에 끔찍할 겁니다.
+
+                        대신 아래와 같은 코드는
+                            if (userInput) { ... }
+                        내부적으로 아래와 같이 변환됩니다
+                            if (userInput === true) {
+                        그리고 여기에서 === 연산자 는 불리언을 생성하고 반환합니다. 또한 비교 중인 변수를 건드리지 않습니다 - userInput 은 문자열로 유지됩니다. 하지만 비교에 일시적으로 사용되는 새 불리언을 생성합니다.
+
+                        이것이 바로 JavaScript가 다음과 같은 항목에 도달했을 때 자동으로 수행하는 작업입니다.
