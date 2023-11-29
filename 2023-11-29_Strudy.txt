@@ -1,0 +1,135 @@
+2023-11-28 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    4-2.안정적인 서비스를 위한 스프링 DATA와 Security - 스프링 시큐리티
+
+                        Ch 01.강의 소개
+
+                        04.스프링 시큐리티란(2)
+
+                            스프링 시큐리티가 설정되어있으면 시큐리티가 제공하는 아이디와 패스워드를 입력해야한다.
+
+                            하지만 외우기 어렵기 때문에 application.yml에 아래와 같이 추가하면 해당 계정으로 로그인가능
+
+                            spring:
+
+                            security:
+
+                            user:
+
+                            name: user1
+
+                            password: 1111
+
+                            roles: USER
+
+                            사용자가 어떤 권한으로 보는지 확인하려면
+
+                            public Authentication auth(){
+
+                            return SecurityContextHolder.getContext().getAuthentication();
+
+                            }
+
+                            고객과 어드민 계정 나누는 예제
+
+                            @PreAuthorize(”hasAnyAuthority(’ROLE_USER’)”)
+
+                            @RequestMapping(”/user”)
+
+                            public SecurityMessage user(){
+
+                            return SecurityMessage.builder()
+
+                                .auth(SecurityContextHolder.getContext().getAuthentication())
+
+                                .message(”User 정보”)
+
+                            .build();
+
+                            }
+
+                            @PreAuthorize(”hasAnyAuthority(’ROLE_ADMIN’)”)
+
+                            @RequestMapping(”/admin”)
+
+                            public SecurityMessage user(){
+
+                            return SecurityMessage.builder()
+
+                                .auth(SecurityContextHolder.getContext().getAuthentication())
+
+                                .message(”Admind 정보”)
+
+                            .build();
+
+                            }
+
+                            시큐리티 컨피그
+
+                            @EnableWebSecurity(debug = true) - 디버깅 활성
+
+                            @EnableGlobalMethodSecurity(prePostEnabled = true) - 권한 모듈 체크 활성
+
+                            public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+                            //유저생성
+
+                            protected void configure(AuthentcationManagerBuilder auth) throws Exception {
+
+                            auth.inMemoryAuthentication()
+
+                            .withUser(User.builder())
+
+                            .username(”user2”)
+
+                            .password(passwordEncoder().encode(”2222”))
+
+                            .roles(”USER)
+
+                            ).withUser(User.builder())
+
+                            .username(”admin”)
+
+                            .password(passwordEncoder().encode(”3333”))
+
+                            .roles(”ADMIN”));
+
+                            }
+
+                            }
+
+                            패스워드 인코딩 작업 필요
+
+                            @Bean
+
+                            PasswordEncoder passwordEncoder(){
+
+                            return new BCryptPasswordEncoder();
+
+                            }
+
+                            권한 상관없이 기본적으로 보여줄 홈페이지 보여줄 때
+
+                            @Override
+
+                            protected void configure(HttpSecurity http) throws Exception {
+
+                            http.authorizeRequests((requests) → 
+
+                            requests.antMatchers(”/”).permitAll()
+
+                            .anyRequest().authenticated()
+
+                            );
+
+                            http.formLogin();
+
+                            http.httpBasic();
+
+                            }
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    84."공격" 함수 추가하기
+                        하드코딩한 전역값을 대문자에 단어 사이에 _ 를 넣어 넣는방법도 있다
+                        공격 버튼을 만들어 이벤트리스너에 넣음
+                        
