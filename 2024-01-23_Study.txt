@@ -1,0 +1,58 @@
+2024-01-23 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    4-2.안정적인 서비스를 위한 스프링 DATA와 Security - 스프링 시큐리티
+
+                        Ch 02.스프링 시큐리티의 전체 구조
+
+                        03.폼로그인
+                            DefaultLoginPageGeneratingFilter
+
+                            UsernamePasswordAuthenticationFilter
+
+                                주요 설정 정보
+
+                                filterProcessingUrl : 로그인을 처리해 줄 URL (POST)
+                                username parameter : POST에 username에 대한 값을 넘겨줄 인자의 이름
+                                password parameter : POST에 password에 대한 값을 넘겨줄 인자의 이름
+                                로그인 성공시 처리 방법
+
+                                defaultSuccessUrl : alwaysUse 옵션 설정이 중요
+                                successHandler
+
+
+                                로그인 실패시 처리 방법
+
+                                failureUrl
+                                failureHandler
+
+
+                                authenticationDetailSource : Authentication 객체의 details 에 들어갈 정보를 직접 만들어 줌.
+
+                            DefaultLogoutPageGeneratingFilter
+                            
+                            LogoutFilter
+                                LogoutHandler
+
+                                void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication);
+                                SecurityContextLogoutHandler : 세션과 SecurityContext 를 clear 함.
+                                CookieClearingLogoutHandler : clear 대상이 된 쿠키들을 삭제함.
+                                CsrfLogoutHandler : csrfTokenRepository 에서 csrf 토큰을 clear 함.
+                                HeaderWriterLogoutHandler
+                                RememberMeServices : remember-me 쿠키를 삭제함.
+                                LogoutSuccessEventPublishingLogoutHandler : 로그아웃이 성공하면 이벤트를 발행함.
+
+
+
+                                LogoutSuccessHandler
+
+                                void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
+                                throws IOException, ServletException;
+                                SimpleUrlLogoutSuccessHandler
+
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    87."힐러" 기능을 추가할 시간!
+                        회복기능추가
+                        end round 함수추가
+                        
+                        
