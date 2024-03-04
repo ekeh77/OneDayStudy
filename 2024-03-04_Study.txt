@@ -1,0 +1,60 @@
+2024-03-04 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    4-2.안정적인 서비스를 위한 스프링 DATA와 Security - 스프링 시큐리티
+
+                        Ch 02.스프링 시큐리티의 전체 구조
+
+                        03-1.basic-login 실습
+                            페이지에 Security 설정하기
+
+                            thymeleaf 에 대한 의존성 추가
+                            bootstrap 을 이용해 기본 페이지 제작
+                            기본 로그인 페이지 제작
+                            csrf 설정
+                            로그인 성공시 설정
+                            로그인 실패시 설정
+                            로그아웃 설정
+                            UserDetailsSource 설정
+
+                            resource web ignore 설정
+                                @Override
+                                public void configure(WebSecurity web) throws Exception {
+                                    web.ignoring()
+                                            .requestMatchers(
+                                                    PathRequest.toStaticResources().atCommonLocations()
+                                            )
+                                            ;
+                                }
+
+                            로그인 사용자
+                                auth
+                                    .inMemoryAuthentication()
+                                    .withUser(
+                                            User.withDefaultPasswordEncoder()
+                                            .username("user1")
+                                            .password("1111")
+                                            .roles("USER")
+                                    ).withUser(
+                                    User.withDefaultPasswordEncoder()
+                                            .username("admin")
+                                            .password("2222")
+                                            .roles("ADMIN")
+                                    );
+
+                            thymeleaf 에서 security를 적용하는 태그
+                                <div sec:authorize="isAuthenticated()">
+                                This content is only shown to authenticated users.
+                                </div>
+                                <div sec:authorize="hasRole('ROLE_ADMIN')">
+                                This content is only shown to administrators.
+                                </div>
+                                <div sec:authorize="hasRole('ROLE_USER')">
+                                This content is only shown to users.
+                                </div>
+
+            Udemy
+               JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                    87.조건적 보너스 생명 제어하기 (불리언 연산자 사용하지 않음!)
+                        보너스 생명 기능 추가
+                        
+                        
