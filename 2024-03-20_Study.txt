@@ -1,0 +1,77 @@
+2024-03-20 패스트 캠퍼스 
+            한번에 끝내는 Java/Spring 웹 개발 마스터 초격차 패키지 Online
+                    4-2.안정적인 서비스를 위한 스프링 DATA와 Security - 스프링 시큐리티
+
+                        Ch 02.스프링 시큐리티의 전체 구조
+
+                        05-1.Basic 인증 기본 테스트
+                            Unit 테스트 하기
+
+                            실습 소스
+
+                            기본적으로 SPA로만 서비스하는 사이트이다. 그래서 form 로그인이 필요없습니다.
+
+                            아래와 같이 필터체인을 설정하고
+                                @EnableWebSecurity
+                                public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+                                    @Override
+                                    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+                                        auth.inMemoryAuthentication()
+                                                .withUser(User.withDefaultPasswordEncoder()
+                                                        .username("user1")
+                                                        .password("1111")
+                                                        .roles("USER")
+                                                .build())
+                                                ;
+                                    }
+
+                                    @Override
+                                    protected void configure(HttpSecurity http) throws Exception {
+                                        http
+                                                .httpBasic()
+                                                ;
+                                    }
+
+                                }
+                            다음과 같이 리소스를 서비스한 다음
+                                @RestController
+                                public class HomeController {
+
+                                    @RequestMapping("/greeting")
+                                    public String hello(){
+                                        return "Hello jongwon";
+                                    }
+
+                                }
+                            아래와 같이 테스트를 진행합니다.
+                                @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+                                public class BasicTokenTest {
+
+                                    @LocalServerPort
+                                    int port;
+
+                                    private RestTemplate restTemplate = new RestTemplate();
+
+                                    @DisplayName("1. Basic Token Test")
+                                    @Test
+                                    void test_1(){
+
+                                        String url = format("http://localhost:%d%s", port, "/greeting");
+                                        HttpHeaders headers = new HttpHeaders();
+                                        headers.add(HttpHeaders.AUTHORIZATION, "basic "+ Base64.getEncoder().encodeToString("user1:1111".getBytes()));
+                                        HttpEntity entity = new HttpEntity("", headers);
+
+                                        ResponseEntity<String> response = restTemplate.exchange(url,
+                                                HttpMethod.GET, entity, String.class);
+
+                                        assertEquals("Hello jongwon", response.getBody());
+                                    }
+
+                                }
+
+        Udemy
+            JavaScript 완벽 가이드 : 초급 + 고급 마스터 과정
+                92.조건적 배틀 로그 추가하기
+                    배틀 로그를 보여주는 함수 추가(배열, 객체 - key value 사용)
+                    객체의 key 추가할 떄 객체.추가할key 로 추가하면 된다
